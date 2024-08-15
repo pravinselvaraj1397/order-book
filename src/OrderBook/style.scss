@@ -220,7 +220,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background: #8a8a8a;
+  background: #d6d6d6;
   border: 1px solid #ddd;
   height: calc(100vh - 100px);
 
@@ -230,6 +230,7 @@
       width: 70px;
       background-color: rgb(126, 189, 241);
       color: #fff;
+      margin: 5px;
     }
   }
   .order-book-section {
