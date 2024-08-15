@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+// @import "../../variables.scss";
 
 // customise ufx-ui book styles
 .ui-orderbook.ufx-book {
@@ -93,7 +93,7 @@
 .ui-orderbook__header {
   font-weight: bold;
   font-size: 13px;
-  color: $white-color;
+  color: #fff;
   height: 27px;
   line-height: 27px;
   text-align: center;
@@ -141,14 +141,14 @@
   }
 
   &.buy .ui-orderbook__pl-vol {
-    background: $orderbook-buy-background-color;
+    background: black;
     position: absolute;
     top: 0;
     right: 0;
   }
 
   &.sell .ui-orderbook__pl-vol {
-    background: $orderbook-sell-background-color;
+    background: black;
     position: absolute;
     top: 0;
     left: 0;
@@ -179,7 +179,7 @@
 }
 
 .ui-orderbook__pl-container-stacked .hfui-orderbook__pl-vol {
-  background: $orderbook-buy-background-color;
+  background: black;
   position: absolute;
   top: 0;
   left: 0;
@@ -212,6 +212,46 @@
 
     &.sell .ui-orderbook__pl-vol {
       border-left: 2px solid var(--darker-background-color);
+    }
+  }
+}
+
+.order-book {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #8a8a8a;
+  border: 1px solid #ddd;
+  height: calc(100vh - 100px);
+
+  .controls {
+    button {
+      height: 40px;
+      width: 70px;
+      background-color: rgb(126, 189, 241);
+      color: #fff;
+    }
+  }
+  .order-book-section {
+    width: 45%;
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .order {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px;
+      margin: 5px 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+
+      &:nth-child(odd) {
+        background: #f1f1f1;
+      }
     }
   }
 }

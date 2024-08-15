@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-
-import logger from "redux-logger";
+import orderBookReducer from "./orderBook.slice";
 
 const store = configureStore({
   reducer: {
     orderBook: orderBookReducer,
   },
-  middleware: [logger],
 });
 
+// In JavaScript, you don't need to export types like `RootState` or `AppDispatch`.
+// Those were TypeScript-specific and are omitted in JavaScript.
 export default store;
