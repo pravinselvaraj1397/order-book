@@ -29,7 +29,7 @@ const OrderBook = () => {
         </div>
       ))}
       <div className="order-book-section">
-        <h2>Bids</h2>
+        <h2>Count </h2>
         {bids.map((bid, index) => (
           <div key={index} className="order">
             <span>{bid.price}</span>
@@ -38,7 +38,25 @@ const OrderBook = () => {
         ))}
       </div>
       <div className="order-book-section">
-        <h2>Asks</h2>
+        <h2>Amount</h2>
+        {asks.map((ask, index) => (
+          <div key={index} className="order">
+            <span>{ask.price}</span>
+            <span>{ask.amount}</span>
+          </div>
+        ))}
+      </div>
+      <div className="order-book-section">
+        <h2>Total</h2>
+        {bids.map((bid, index) => (
+          <div key={index} className="order">
+            <span>{bid.price}</span>
+            <span>{bid.amount}</span>
+          </div>
+        ))}
+      </div>
+      <div className="order-book-section">
+        <h2>Price</h2>
         {asks.map((ask, index) => (
           <div key={index} className="order">
             <span>{ask.price}</span>
