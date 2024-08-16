@@ -65,7 +65,7 @@ import React, { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import "./style.scss";
 
-const OrderBook = (props) => {
+const OrderBook = () => {
   const bids = useSelector((state) => state.orderBook.bids);
   const asks = useSelector((state) => state.orderBook.asks);
   const [precision, setPrecision] = useState(2);
@@ -79,7 +79,7 @@ const OrderBook = (props) => {
     if (precision > 0) setPrecision(precision - 1);
   };
 
-  console.log(bids[0], "lkl");
+  console.log(asks, "lkl");
 
   return (
     <div class="order-book">
@@ -99,18 +99,26 @@ const OrderBook = (props) => {
           <div>AMOUNT</div>
           <div>COUNT</div>
         </div>
-        <div class="table-body">
-          <div class="row">
-            <div>7</div>
-            <div>3.985</div>
-            <div>3.985</div>
-            <div class="price green">19,229</div>
-            <div class="price red">19,230</div>
-            <div>0.3185</div>
-            <div>0.3185</div>
-            <div>7</div>
-          </div>
-        </div>
+        {bids &&
+          bids.map((bid, i) => (
+            <div className="table-body" key={i}>
+              <div className="row">
+                <div>{bid.count}</div> {/* count */}
+                <div>{bid.amount}</div> {/* amount */}
+                <div>{bid.amount}</div> {/* total or other relevant value */}
+                <div className="price green">{bid.price}</div> {/* price */}
+                {/* {asks &&
+                  asks.map((ask, i) => {
+                    <> */}
+                <div class="price red">{bid.price}</div>
+                <div>{bid.amount}</div>
+                <div>{bid.amount}</div>
+                <div>{bid.count}</div>
+                {/* </>;
+                  })} */}
+              </div>
+            </div>
+          ))}
       </div>
       <div class="footer">
         <span>FULL BOOK</span>
