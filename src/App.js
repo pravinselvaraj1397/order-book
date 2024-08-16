@@ -32,18 +32,18 @@ const App = () => {
 
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data);
+      console.log(data[1], "ll");
 
       if (Array.isArray(data[1])) {
         const [price, count, amount] = data[1];
-        const orderType = amount > 0 ? "bids" : "asks";
+        const orderType = amount < 0 ? "bids" : "asks";
         dispatch(
           updateOrderBook({
-            [orderType]: [{ price, amount: Math.abs(amount) }],
+            [orderType]: [{ price, count, amount: Math.abs(amount) }],
           })
         );
       }
     };
-
     return () => {
       ws.close();
     };
