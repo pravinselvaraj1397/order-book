@@ -82,88 +82,124 @@ const OrderBook = (props) => {
   console.log(bids[0], "lkl");
 
   return (
-    <div className="order-book">
-      <div className="controls">
-        <button onClick={increasePrecision}>Increase Precision</button>
-        <button onClick={decreasePrecision}>Decrease Precision</button>
+    <div class="order-book">
+      <div class="header">
+        <span>ORDER BOOK BTC/USD</span>
+        {/* <div class="icons">
+        </div> */}
       </div>
-      {memoizedBids.map((bid, index) => (
-        <div key={index} className="order">
-          <span>{bid?.price?.toFixed(precision)}</span>
-          <span>{bid?.amount?.toFixed(2)}</span>
+      <div class="table">
+        <div class="table-header">
+          <div>COUNT</div>
+          <div>AMOUNT</div>
+          <div>TOTAL</div>
+          <div>PRICE</div>
+          <div>PRICE</div>
+          <div>TOTAL</div>
+          <div>AMOUNT</div>
+          <div>COUNT</div>
         </div>
-      ))}
-      {memoizedAsks.map((bid, index) => (
-        <div key={index} className="order">
-          <span>{bid?.price?.toFixed(precision)}</span>
-          <span>{bid?.amount?.toFixed(2)}</span>
+        <div class="table-body">
+          <div class="row">
+            <div>7</div>
+            <div>3.985</div>
+            <div>3.985</div>
+            <div class="price green">19,229</div>
+            <div class="price red">19,230</div>
+            <div>0.3185</div>
+            <div>0.3185</div>
+            <div>7</div>
+          </div>
         </div>
-      ))}
-      <div className="order-book-section">
-        <h2>Count</h2>
-        {bids.map((bid) => (
-          <div className="order">
-            <span>{bid[0]?.count}</span>
-          </div>
-        ))}
       </div>
-      <div className="order-book-section">
-        <h2>Amount</h2>
-        {bids.map((bid) => (
-          <div className="order">
-            <span>{bid[0]?.amount}</span>
-          </div>
-        ))}
-      </div>
-      <div className="order-book-section">
-        <h2>Total</h2>
-        {bids.map((bid) => (
-          <div className="order">
-            <span>{bid[0]?.count}</span>
-          </div>
-        ))}
-      </div>
-      <div className="order-book-section">
-        <h2>Price</h2>
-        {bids.map((bid, index) => (
-          <div className="order">
-            <span>{bid[0]?.price}</span>
-          </div>
-        ))}
-      </div>
-      <div className="order-book-section">
-        <h2>Count</h2>
-        {asks.map((bid, index) => (
-          <div key={index} className="order">
-            <span>{bid[0]?.count}</span>
-          </div>
-        ))}
-      </div>
-      <div className="order-book-section">
-        <h2>Amount</h2>
-        {asks.map((bid, index) => (
-          <div key={index} className="order">
-            <span>{bid[0]?.amount}</span>
-          </div>
-        ))}
-      </div>
-      <div className="order-book-section">
-        <h2>Total</h2>
-        {asks.map((bid, index) => (
-          <div key={index} className="order">
-            <span>{bid[0]?.count}</span>
-          </div>
-        ))}
-      </div>
-      <div className="order-book-section">
-        <h2>Price</h2>
-        {asks.map((bid, index) => (
-          <div key={index} className="order">
-            <span>{bid[0]?.price}</span>
-          </div>
-        ))}
+      <div class="footer">
+        <span>FULL BOOK</span>
+        <span>REAL-TIME</span>
       </div>
     </div>
+
+    // <div className="order-book">
+    //   <div className="controls">
+    //     <button onClick={increasePrecision}>Increase Precision</button>
+    //     <button onClick={decreasePrecision}>Decrease Precision</button>
+    //   </div>
+    //   {memoizedBids.map((bid, index) => (
+    //     <div key={index} className="order">
+    //       <span>{bid?.price?.toFixed(precision)}</span>
+    //       <span>{bid?.amount?.toFixed(2)}</span>
+    //     </div>
+    //   ))}
+    //   {memoizedAsks.map((bid, index) => (
+    //     <div key={index} className="order">
+    //       <span>{bid?.price?.toFixed(precision)}</span>
+    //       <span>{bid?.amount?.toFixed(2)}</span>
+    //     </div>
+    //   ))}
+    //   <div className="order-book-section">
+    //     <h2>Count</h2>
+    //     {bids.map((bid) => (
+    //       <div className="order">
+    //         <span>{bid[0]?.count}</span>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div className="order-book-section">
+    //     <h2>Amount</h2>
+    //     {bids.map((bid) => (
+    //       <div className="order">
+    //         <span>{bid[0]?.amount}</span>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div className="order-book-section">
+    //     <h2>Total</h2>
+    //     {bids.map((bid) => (
+    //       <div className="order">
+    //         <span>{bid[0]?.count}</span>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div className="order-book-section">
+    //     <h2>Price</h2>
+    //     {bids.map((bid, index) => (
+    //       <div className="order">
+    //         <span>{bid[0]?.price}</span>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div className="order-book-section">
+    //     <h2>Count</h2>
+    //     {asks.map((bid, index) => (
+    //       <div key={index} className="order">
+    //         <span>{bid[0]?.count}</span>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div className="order-book-section">
+    //     <h2>Amount</h2>
+    //     {asks.map((bid, index) => (
+    //       <div key={index} className="order">
+    //         <span>{bid[0]?.amount}</span>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div className="order-book-section">
+    //     <h2>Total</h2>
+    //     {asks.map((bid, index) => (
+    //       <div key={index} className="order">
+    //         <span>{bid[0]?.count}</span>
+    //       </div>
+    //     ))}
+    //   </div>
+    //   <div className="order-book-section">
+    //     <h2>Price</h2>
+    //     {asks.map((bid, index) => (
+    //       <div key={index} className="order">
+    //         <span>{bid[0]?.price}</span>
+    //       </div>
+    //     ))}
+    //   </div>
+    // </div>
   );
 };
 
